@@ -9,17 +9,20 @@
       echo "$((cpu))"
   register: temps
   ignore_errors: true #will continue to run if a node is unreachable
-
-- name: get poe fan level settings
-  shell: cat /boot/config.txt | grep dtparam=poe | awk 'BEGIN { FS =  "="} ; {print $3}'
-  register: speeds
-  when: inc_fan_settings|bool
     
 - name: cpu and gpu temps results
   debug:
     msg: "{{temps.stdout_lines[1]}} | {{temps.stdout_lines[0]}}" #alternate cpu var {{temps.stdout_lines[2]|int)/1000)|round|int}}
 
-- name: poe fan temp level results
-  debug:
-    msg: "Fan levels: {{speeds.stdout_lines[0]}},{{speeds.stdout_lines[1]}},{{speeds.stdout_lines[2]}},{{speeds.stdout_lines[3]}}"
+- name: get poe hat config
+  block:
+
+  - name: get fan settings
+    include_tasks: fan_config_raspbian.yml
+    when: ansible_distribution != "Ubuntu"
+  
+  - name: get fan settings
+    include_tasks: fan_config_ubuntu.yml
+    when: ansible_distribution == "Ubuntu"
+  
   when: inc_fan_settings|bool
