@@ -8,11 +8,11 @@
 - name: poe fan trip point results
   debug:
     msg:
-      - tp3 temp: {{trip_results.stdout_lines[0]}}
-      - tp3 hyst: {{trip_results.stdout_lines[1]}}
-      - tp2 temp: {{trip_results.stdout_lines[2]}}
-      - tp2 hyst: {{trip_results.stdout_lines[3]}}
-      - tp1 temp: {{trip_results.stdout_lines[4]}}
-      - tp1 hyst: {{trip_results.stdout_lines[5]}}
-      - tp0 temp: {{trip_results.stdout_lines[6]}}
-      - tp0 hyst: {{trip_results.stdout_lines[7]}}
+      - 'tp3 temp: {{trip_results.stdout_lines[0]}}'
+      - 'tp3 hyst: {{trip_results.stdout_lines[1]}}'
+      - 'tp2 temp: {{trip_results.stdout_lines[2]}}'
+      - 'tp2 hyst: {{trip_results.stdout_lines[3]}}'
+      - 'tp1 temp: {{trip_results.stdout_lines[4]}}'
+      - 'tp1 hyst: {{trip_results.stdout_lines[5]}}'
+      - 'tp0 temp: {{trip_results.stdout_lines[6]}}'
+      - 'tp0 hyst: {{trip_results.stdout_lines[7]}}'
