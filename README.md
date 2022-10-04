@@ -1,8 +1,8 @@
-# Ansible Role: rpi_get_temps
+# Ansible Playbook: rpi_get_cpu_gpu_temp
 
 ### Part of my Raspberry Pi cluster project
 
-Gathers infomation on current CPU/GPU temperature readings and PoE hat fan speed levels.
+Gathers information of current CPU/GPU temperatures on rpi hosts.
 
 ## Requirements
 
