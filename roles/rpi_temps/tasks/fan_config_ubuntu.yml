@@ -6,7 +6,7 @@
   register: trip_results
 
 - name: get fan state stats
-  shell: cat /sys/class/thermal/cooling_device0/stats/time_in_state_ms | grep state | awk 'BEGIN { FS = " "} ; {print $2}'
+  shell: cat /sys/class/thermal/cooling_device0/stats/time_in_state_ms | awk 'BEGIN { FS = " "} ; {print $2}'
   register: state_stats
 
 - name: fan state statistics
