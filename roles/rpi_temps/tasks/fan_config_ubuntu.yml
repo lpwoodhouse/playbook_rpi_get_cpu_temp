@@ -12,11 +12,11 @@
 - name: fan state statistics
   debug:
     msg:
-      - "state0(off): {{ (state_stats.stdout_lines[0]+'ms') | community.general.to_minutes | float | round }}"
-      - "state1(tp3): {{ (state_stats.stdout_lines[1]+'ms') | community.general.to_minutes | float | round }}"
-      - "state2(tp2): {{ (state_stats.stdout_lines[2]+'ms') | community.general.to_minutes | float | round }}"
-      - "state3(tp1): {{ (state_stats.stdout_lines[3]+'ms') | community.general.to_minutes | float | round }}"
-      - "state4(tp0): {{ (state_stats.stdout_lines[4]+'ms') | community.general.to_minutes | float | round }}"
+      - "state0(off): {{ (state_stats.stdout_lines[0]+'ms') | community.general.to_minutes | float | round(2) }}"
+      - "state1(tp3): {{ (state_stats.stdout_lines[1]+'ms') | community.general.to_minutes | float | round(2) }}"
+      - "state2(tp2): {{ (state_stats.stdout_lines[2]+'ms') | community.general.to_minutes | float | round(2) }}"
+      - "state3(tp1): {{ (state_stats.stdout_lines[3]+'ms') | community.general.to_minutes | float | round(2) }}"
+      - "state4(tp0): {{ (state_stats.stdout_lines[4]+'ms') | community.general.to_minutes | float | round(2) }}"
 
 - name: poe fan trip point results
   debug:
