@@ -1,34 +1,18 @@
 ---
 # This task gets poe fan speed levels on distros where poe params are configured by udev (i.e Ubuntu)
 
-- name: get poe fan level settings
-  shell: cat /etc/udev/rules.d/50-rpi-fan.rules | grep _temp | awk 'BEGIN { FS =  "="} ; {print $2}'
-  register: speeds
+- name: get cpu temp trip points
+  shell: cat /etc/udev/rules.d/50-rpi-fan.rules | grep ATTR | awk 'BEGIN { FS =  "="} ; {print $2}'
+  register: trip_results
 
-- name: poe fan temp level results
+- name: poe fan trip point results
   debug:
-    msg: "Trip Points: {{speeds.stdout_lines[0]}},{{speeds.stdout_lines[1]}},{{speeds.stdout_lines[2]}},{{speeds.stdout_lines[3]}}"
-
-
-
-
-# If the temp hits 75c, turn on the fan. Turn it off again when it goes back down to 70.
-#ATTR{trip_point_3_temp}="75000"
-#ATTR{trip_point_3_hyst}="5000"
-#
-# If the temp hits 78c, higher RPM. Lowers rpm (trip_point_3) when it goes back down to 76
-#ATTR{trip_point_2_temp}="78000"
-#ATTR{trip_point_2_hyst}="2000"
-#
-# If the temp hits 80c, higher RPM. Lowers rpm (trip_point_2) when it goes back down to 78
-#ATTR{trip_point_1_temp}="80000"
-#ATTR{trip_point_1_hyst}="2000"
-#
-# If the temp hits 81c, highest RPM. Lowers rpm (trip_point_3) when it goes back down to 76
-#ATTR{trip_point_0_temp}="81000"
-#ATTR{trip_point_0_hyst}="5000"
-
-#dtparam=poe_fan_temp0={{ fan_level0 }}
-#dtparam=poe_fan_temp1={{ fan_level1 }}
-#dtparam=poe_fan_temp2={{ fan_level2 }}
-#dtparam=poe_fan_temp3={{ fan_level3 }}
+    msg:
+      - tp3 temp: {{trip_results.stdout_lines[0]}}
+      - tp3 hyst: {{trip_results.stdout_lines[1]}}
+      - tp2 temp: {{trip_results.stdout_lines[2]}}
+      - tp2 hyst: {{trip_results.stdout_lines[3]}}
+      - tp1 temp: {{trip_results.stdout_lines[4]}}
+      - tp1 hyst: {{trip_results.stdout_lines[5]}}
+      - tp0 temp: {{trip_results.stdout_lines[6]}}
+      - tp0 hyst: {{trip_results.stdout_lines[7]}}
