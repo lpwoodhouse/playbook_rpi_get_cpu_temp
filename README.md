@@ -1,6 +1,11 @@
 # Ansible Playbook: rpi_get_cpu_gpu_temp
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
 
-### Part of my Raspberry Pi cluster project
+## Part of my Raspberry Pi cluster project
+
+## Purpose
 
 Gathers information of current CPU/GPU temperatures on rpi hosts.
 
@@ -27,7 +32,7 @@ None
 
 ## License
 
-MIT
+[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)](LICENSE)
 
 ## Author Information
 
