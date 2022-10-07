@@ -1,7 +1,7 @@
-# Ansible Playbook: rpi_get_cpu_gpu_temp
-![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
-![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)
+# Ansible Playbook: rpi_get_cpu_temp
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_get_cpu_temp)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_get_cpu_temp)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_get_cpu_temp)
 
 ## Part of my Raspberry Pi cluster project
 
@@ -32,7 +32,7 @@ None
 
 ## License
 
-[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_get_cpu_gpu_temp)](LICENSE)
+[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_get_cpu_temp)](LICENSE)
 
 ## Author Information
 
